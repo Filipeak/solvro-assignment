@@ -21,6 +21,7 @@ app.use(express.urlencoded({ extended: false }));
 
 app.use("/cocktails", require("./routes/cocktails"));
 app.use("/ingredients", require("./routes/ingredients"));
+app.use("/docs", require("./routes/docs"));
 
 app.use((err, req, res, next) => {
     console.error(err.stack);
