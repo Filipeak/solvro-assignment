@@ -1,0 +1,23 @@
+name: Test Backend
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Use Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22.x"
+      - name: Install dependencies
+        working-directory: ./backend
+        run: npm ci
+      - name: Run tests
+        env:
+          FIREBASE_SERVICE_ACCOUNT_KEY: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_KEY }}
+        working-directory: ./backend
+        run: npm test
