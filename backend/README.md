@@ -24,3 +24,5 @@ Projekt zawiera dokumentację API stworzoną przy użyciu 'swagger-jsdoc' oraz '
 ## Testy
 
 Testy jednostkowe zostały napisane przy użyciu 'Jest', uruchamianie: ```npm test```.
+
+Dodatkowo automatyczne testy przy użyciu GitHub Actions.
